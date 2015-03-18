@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>the5fire-backbone-view</title>
+    <meta charset="utf-8"/>
+    <script src="../../lib/jquery.js"></script>
+    <script src="../../lib/underscore.js"></script>
+    <script src="../../lib/backbone.js"></script>
+</head>
+<body>
+<div class="listContainer"></div>
+<script type="text/template" id="listTemplate">
+    <ul>
+        <% _.each(news,function(s_news){ %>
+        <li>
+            <h4><%- s_news.title %></h4>
+            <p><%- s_news.content %></p>
+        </li>
+        <% }) %>
+    </ul>
+</script>
+<script>
+    $(function(){
+        var ListView = Backbone.View.extend({
+            el: '.listContainer',
+            initialize: function(){
+                var news = {
+                    news : [
+                        {
+                            title: '<苹果3月9日举行发布会！>',
+                            content: '<苹果除了公布Apple Watch的更多细节外，如产品定价等。或许还会带来新的产品，不知道是不是外界期待已久的12寸视网膜版MBA。>'
+                        },
+                        {
+                            title: '<三星员工工资不涨了 全赖这两部手机！>',
+                            content: '<昨日，三星电子宣布将“冻结”2015年所有在韩员工的工资。所谓“冻结”并非不发工资，而是基本工资在2015年全年内都将固定，不能加薪。>'
+                        },
+                        {
+                            title: '日本奇葩发明：十分钟后便便就要出来了',
+                            content: '只要将一只小小的芯片贴在肚脐下方，系统就会感知到你的胃肠蠕动，它还提供手机APP，可向你的手机发送提醒“十分钟后便便就要出来了！”'
+                        },
+                        {
+                            title: '给妹子发红包担心给女友看到？认命吧',
+                            content: '根据北京晚报的报道，春节期间小伙子张勇给异性好友刘某定向发了一个微信红包，之后心里一直不踏实，特别担心被女友看到产生不快，于是他就想删除微信红包记录，但却发现无法删除。'
+                        }
+                    ]
+                }
+                this.render(news);
+            },
+            render: function(param){
+                var template = _.template($("#listTemplate").html(), param);
+                this.$el.html(template);
+            }
+        })
+        var listView = new ListView();
+    })
+</script>
+</body>
+</html>

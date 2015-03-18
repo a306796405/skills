@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素CSS值之getComputedStyle方法熟悉</title>
+    <link rel="stylesheet" href="../common/css/base.css"/>
+
+    <style>
+        /* 方法1：可以实现...但是在firefox下发虚 */
+        .dot_1 {
+            display: inline-block; min-width: 2px; min-height: 2px; margin-right: 8px;
+            color: #fff;
+            box-shadow: 2px 0 #fff, 6px 0 #fff, 10px 0 #fff;
+            -webkit-animation: dotting_1 3s infinite step-start both;
+            animation: dotting_1 3s infinite step-start both;
+            *zoom: expression(this.innerHTML = '...'); /* IE7 */
+        }
+        .dot_1:before { content: '...'; } /* IE8 */
+        .dot_1::before { content: ''; } /* IE9+ */
+
+        @-webkit-keyframes dotting_1{
+            25% { box-shadow: 2px 0 transparent,6px 0 transparent,10px 0 transparent; }
+            50%{ box-shadow: 2px 0 currentColor, 6px 0 transparent; }
+            75%{ box-shadow: 2px 0 currentColor, 6px 0 currentColor; }
+        }
+        @-moz-keyframes dotting_1 {
+            25% { box-shadow: 2px 0 transparent,6px 0 transparent,10px 0 transparent; }
+            50%{ box-shadow: 2px 0 currentColor, 6px 0 transparent; }
+            75%{ box-shadow: 2px 0 currentColor, 6px 0 currentColor; }
+        }
+        @keyframes dotting_1 {
+            25% { box-shadow: 2px 0 transparent,6px 0 transparent,10px 0 transparent; }
+            50%{ box-shadow: 2px 0 currentColor, 6px 0 transparent; }
+            75%{ box-shadow: 2px 0 currentColor, 6px 0 currentColor; }
+        }
+
+        /* 方法2：可以实现... 但是在firefox下发虚 */
+        .dot_2{
+            display: inline-block; min-width: 10px; min-height: 2px; padding: 0 2px; margin-left: 2px;
+            border-left: 2px solid currentColor; border-right: 2px solid currentColor;
+            color: #fff; background-color: currentColor;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            background-clip: content-box;
+            -webkit-animation: dotting_2 3s infinite step-start;
+            animation: dotting_2 3s infinite step-start;
+            *zoom: expression(this.innerHTML = '...'); /* IE7 */
+        }
+        .dot_2:before { content: '...'; } /* IE8 */
+        .dot_2::before { content: ''; } /* IE9+ */
+
+        @-webkit-keyframes dotting_2{
+            25% { border-left-color: transparent; border-right-color: transparent; background-color: transparent; }
+            50% { border-left-color: currentColor; border-right-color: transparent; background-color: transparent; }
+            75% { border-left-color: currentColor; border-right-color: transparent; background-color: currentColor; }
+        }
+        @-moz-keyframes dotting_2{
+            25% { border-left-color: transparent; border-right-color: transparent; background-color: transparent; }
+            50% { border-left-color: currentColor; border-right-color: transparent; background-color: transparent; }
+            75% { border-left-color: currentColor; border-right-color: transparent; background-color: currentColor; }
+        }
+        @keyframes dotting_2{
+            25% { border-left-color: transparent; border-right-color: transparent; background-color: transparent; }
+            50% { border-left-color: currentColor; border-right-color: transparent; background-color: transparent; }
+            75% { border-left-color: currentColor; border-right-color: transparent; background-color: currentColor; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <p>
+        <a class="btn btn-green" href="javascript:;">订单提交中<span class="dot_1"></span></a>
+    </p>
+    <p>
+        <a class="btn btn-green" href="javascript:;">订单提交中<span class="dot_2"></span></a>
+    </p>
+</div>
+<div class="box changing"></div>
+
+</body>
+</html>

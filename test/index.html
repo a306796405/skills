@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="lib/jquery.js"></script>
+    <script>
+        $(function(){
+            var news = {
+                a: function(){
+                    this.b = this.$('.box');
+                },
+                b: null
+            }
+            news.a();
+        })
+    </script>
+</head>
+<body>
+    <div class="box">hahaha</div>
+</body>
+</html>

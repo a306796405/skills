@@ -1,0 +1,1 @@
+define(["jquery","easyTabs"],function(e){e(document).ready(function(){e("#tab-container").easytabs()})});

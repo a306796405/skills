@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<a href="#/asdf/asdf/qwer">testActions</a>
+
+<script src="../../lib/jquery.js"></script>
+<script src="../../lib/underscore.js"></script>
+<script src="../../lib/backbone.js"></script>
+<script>
+    $(function(){
+        var ModelTest = Backbone.Model.extend({
+
+        })
+        var AppView = Backbone.View.extend({
+
+        })
+        var appView = new AppView();
+
+        var AppRouter = Backbone.Router.extend({
+            initialize: function(){
+                console.log(this);
+            },
+            routes: {
+                "*actions" : "defaultRoute"
+            },
+            defaultRoute : function(actions){
+                alert(actions);
+            }
+        });
+        var app_router = new AppRouter;
+        Backbone.history.start();
+    })
+</script>
+</body>
+</html>

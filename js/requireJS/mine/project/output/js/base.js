@@ -1,0 +1,1 @@
+document.write('<script src="js/a.js"></script>'),document.write('<script src="js/b.js"></script>'),document.write('<script src="js/c.js"></script>'),document.body.style.color="blue",document.body.style.background="gray",document.body.style.margin="100px";

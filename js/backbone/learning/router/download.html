@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../lib/jquery.js"></script>
+    <script src="../../lib/underscore.js"></script>
+    <script src="../../lib/backbone.js"></script>
+</head>
+<body>
+<a href="#/posts/120">120</a>
+<a href="#/download/user/images/hey.gif">download gif</a>
+<a href="#/dashboard/graph">Load Route/Action View</a>
+
+<script>
+    $(function(){
+        var AppRouter = Backbone.Router.extend({
+            routes: {
+                "posts/:id" : "getPost",
+                //下面对应的链接为<a href="#/download/user/images/hey.gif">download gif</a>
+                "download/*path": "downloadFile",
+                //下面对应的链接为<a href="#/dashboard/graph">Load Route/Action View</a>
+                ":route/:action": "loadView",
+                "*actions" : "defaultRoute"
+            },
+            getPost: function(id) {
+                console.log(id);
+            },
+            defaultRoute : function(actions){
+                console.log('default: ' + actions);
+            },
+            downloadFile: function(path){
+                console.log('download: ' + path); // user/images/hey.gif
+            },
+            loadView: function( route, action ){
+                console.log(route + "_" + action); // dashboard_graph
+            }
+        });
+        var app_router = new AppRouter;
+        Backbone.history.start();
+    })
+</script>
+</body>
+</html>

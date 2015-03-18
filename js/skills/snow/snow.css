@@ -1,0 +1,160 @@
+/* 导入所需css */
+@import url('http://cdn.gbtags.com/appframework/2.1/af.ui.css');/* 框架CSS */
+@import url('http://cdn.gbtags.com/font-awesome/4.1.0/css/font-awesome.min.css');
+@import url('http://cdn.gbtags.com/animate.css/3.1.1/animate.min.css');
+
+/* 移动相关框架定义 */
+
+#afui .fullpage{
+    overflow:hidden;
+    padding:0;
+    text-align:center;
+    font-family: 'microsoft yahei',Arial,sans-serif;
+}
+
+.loading{
+    border-radius: 10px;
+}
+
+.header,.footer {
+    display:none !important;
+}
+
+#main .bg{
+    background: url('http://www.gbtags.com/gb/laitu/1600x1800&text=Merry Christmas/ff9823/ffffff') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#page1 .bg{
+    background: url('http://cdn.gbtags.com/gblibraryassets/2014xmas/bg1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.start{
+    position:absolute;
+    bottom:20px;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+}
+
+#start:before{
+    left:0;
+    top: 50px;
+}
+
+/* 图片和首页动画定义 */
+/* 添加图片相关CSS */
+
+.xmas{
+    opacity: .95;
+    border-radius: 15;
+    box-shadow: 0 0 180px #FFFFFF;
+    position: relative;
+    max-height: 30%;
+    margin: 0 10px;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    top: 20px;
+}
+
+.xmas:nth-child(1){
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+.xmas:nth-child(2){
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.xmas:nth-child(3){
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+.xmas:nth-child(4){
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+.fixedslogn{
+    position: fixed;
+    bottom: 10%;
+    background: rgba(255,255,255,.5);
+    border-radius: 15px;
+    width: 100%;
+}
+
+.tree {
+    background: url(http://cdn.gbtags.com/gblibraryassets/2014xmas/ctree.png)bottom center;
+    padding: 0;
+    height: 145px;
+    -moz-animation: bgscroll 370s infinite linear;
+    -ms-animation: bgscroll 370s infinite linear;
+    -o-animation: bgscroll 370s infinite linear;
+    -webkit-animation: bgscroll 370s infinite linear;
+}
+
+.topwrap1 {
+    color: #777;
+    background: #FFF url(http://cdn.gbtags.com/gblibraryassets/2014xmas/Mountain.png) top center repeat-x;
+    padding: 0;
+    margin:0;
+    height: 185px;
+    border-bottom: 0 solid #333;
+    margin: auto auto;
+    vertical-align: middle;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.2) inset,0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 10% 10% ;
+}
+
+.topwrap1 {
+    -moz-animation: bgscroll 750s infinite linear;
+    -ms-animation: bgscroll 750s infinite linear;
+    -o-animation: bgscroll 750s infinite linear;
+    -webkit-animation: bgscroll 750s infinite linear;
+}
+
+/* BEGIN ANIMATIONS */
+@-webkit-keyframes bgscroll {
+    from {background-position: 0 0;}
+    to {background-position: -9999px 0;}
+}
+
+@-moz-keyframes bgscroll {
+    from {background-position: 0 0;}
+    to {background-position: -9999px 0;}
+}
+
+@-ms-keyframes bgscroll {
+    from {background-position: 0 0;}
+    to {background-position: -9999px 0;}
+}
+
+@-o-keyframes bgscroll {
+    from {background-position: 0 0;}
+    to {background-position: -9999px 0;}
+}
+
+@keyframes bgscroll {
+    from {background-position: 0 0;}
+    to {background-position: -9999px 0;}
+}

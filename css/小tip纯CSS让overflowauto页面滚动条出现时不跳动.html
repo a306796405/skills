@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素CSS值之getComputedStyle方法熟悉</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+        }
+        .outer_wrap{
+            /* 100vw 视窗宽度 - 实际区域大小 可计算出滚动条大小 */
+            padding-left: calc(100vw - 100%);
+        }
+        .wrap{
+            width: 980px; margin:  0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="outer_wrap">
+    <div class="wrap">
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+        <p>测试数据。。。。。。。。。。。。</p>
+    </div>
+</div>
+
+</body>
+</html>

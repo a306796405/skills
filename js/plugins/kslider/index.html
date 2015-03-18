@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>kslider-kun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="kslider.css" type="text/css"/>
+    <script type="text/javascript" src="http://zeptojs.com/zepto.js"></script>
+    <script type="text/javascript" src="zepto.kslider.js"></script>
+    <script type="text/javascript">
+        var k;
+
+        $(function () {
+
+            /*
+             参数：config
+
+             change:tab页变更事件
+             参数e: 当前页码
+             tick:自动滚动间隔时间毫秒 (不设置则不自动滚动)
+             maxWidth:容器最大宽度 (默认有100%)
+             minWidth:容器最小宽度 (默认有100%)
+             className:样式类名
+             "ks_wt_1" 标题栏-方形 (默认)
+             "ks_wt_2" 标题栏-小圆形
+             或者你自定义的类名
+
+             */
+
+            k = $("#divs1").slider({
+                change: function (e) {
+                    console.log(e);
+                }, maxWidth: 360, minWidth: 300
+            });
+            //js添加一页并且跳转到第4页
+            k.add("标题", "内容").tab(3);
+            //删除页
+            k.remove(0);
+
+            //小圆形按钮标题  每隔3秒自动滚动
+            $("#divs2").slider({maxWidth: 300, className: "ks_wt_2 myimg", tick: 3000});
+        });
+    </script>
+
+    <style type="text/css">
+        .myimg {
+            background: #fff;
+        }
+
+        .myimg img {
+            width: 100%;
+            height: 100%;
+            max-height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="divs1" class="kslider ks_wt_1">
+    <ul class="ks_wt">
+        <li class="ks_t2">标题1</li>
+        <li>标题2</li>
+        <li>标题3</li>
+    </ul>
+    <div class="ks_dbox ks_ts">
+        <div class="ks_warp">
+            <ul>
+                <li>text1</li>
+                <li>text1</li>
+                <li>text1</li>
+                <li>text1</li>
+                <li>text1</li>
+                <li>text1</li>
+                <li>text1</li>
+                <li>text1</li>
+            </ul>
+        </div>
+        <div class="ks_warp">
+            <img src="img/img1.jpg"/>
+        </div>
+        <div class="ks_warp">
+            <ul>
+                <li>text3</li>
+                <li>text3</li>
+                <li>text3</li>
+                <li>text3</li>
+                <li>text3</li>
+                <li>text3</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<br/><br/><br/><br/>
+
+<div id="divs2" class="kslider">
+    <div class="ks_dbox ks_ts">
+        <div class="ks_warp">
+            <img src="img/img1.jpg"/>
+        </div>
+        <div class="ks_warp">
+            <img src="img/img2.jpg"/>
+        </div>
+        <div class="ks_warp">
+            <img src="img/img3.jpg"/>
+        </div>
+        <div class="ks_warp">
+            <img src="img/img4.jpg"/>
+        </div>
+        <div class="ks_warp">
+            <img src="img/img5.jpg"/>
+        </div>
+        <div class="ks_warp">
+            <img src="img/img6.jpg"/>
+        </div>
+    </div>
+    <ul class="ks_wt">
+        <li class="ks_t2"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<div style="height:400px;"></div>
+底部
+
+
+</body>
+</html>

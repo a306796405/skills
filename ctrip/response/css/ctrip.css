@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+/* reset start */
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,em,button{margin:0;padding:0;}
+html{background-color:#FFF;}
+body{background-color:#FFF;font-size:12px;line-height:1.5;font-family:Tahoma,Simsun,sans-serif;color:#333;}
+img,fieldset{margin:0;padding:0;border:0;}
+input,textarea{font-size:12px;}
+table{border-collapse:collapse;}
+a{color:#06c;text-decoration:none;outline:none;}
+a:hover{text-decoration:underline;}
+h1,h2,h3,h4,h5{font-size:100%;font-weight:normal;}
+ul,ol{list-style:none;}
+dfn{font:normal 12px Arial;}
+section{display:block;}
+.basefix{display:inline-block;}
+.basefix{display:block;overflow:hidden;}
+.basefix{*zoom:1;}
+.basefix:after{content:"";display:table;clear:both;}
+.fl{float:left!important;}
+.fr{float:right!important;}
+.base_gray{color:#999;}
+.invisible{visibility:hidden!important;}
+.hidden{display:none!important;}
+.tr{text-align:right!important;}
+.border_none{border:0 none!important;}
+.mt0{margin-top:0!important;}
+/* =S Structure */
+/* head width */
+.cui_hd,.cui_nav{width:1180px;}
+#base_bd{width:1180px;padding:10px 10px 0;margin:0 auto;*zoom:1;*margin-bottom:20px;}
+#base_bd:after,.base_main:after{clear:both;content:'.';display:block;height:0;overflow:hidden;}
+.base_main{*zoom:1;}
+.cui_hd,.cui_nav,#base_bd,#base_ft{width:1180px;}
+/* =E Structure */
+/* =S footer */
+
+p.copyright{font-family:Verdana,simsun,sans-serif;}
+/* E= footer */
+/* Structure End */
+body{min-width:1200px;}

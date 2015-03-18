@@ -1,0 +1,30 @@
+/*
+    kslider.css
+    lxk 2014.08.14
+    www.cnblogs.com/wingkun
+*/
+
+
+body{margin:0px;text-align:center;font:12px 微软雅黑;}
+
+.kslider{overflow:hidden;margin:0 auto;background:#f0f0f0;box-sizing: border-box;}
+
+.kslider .ks_warp{width:100%;}
+.kslider .ks_ts{-webkit-transition:500ms;}
+.kslider .ks_dbox{width:100%;display:-webkit-box;margin-bottom:10px;text-align:left;}
+
+.kslider .ks_wt{display:-webkit-box;margin:0px;padding:0px;-webkit-box-pack:center;}
+.kslider .ks_wt li{text-align:center;list-style:none;background: -webkit-linear-gradient(top, #AAAAAA 0%,#979797 100%);color: #fff;}
+
+.ks_wt_1 .ks_wt li{-webkit-box-flex:1;height:35px;line-height:35px;border-right:solid 1px #BBB;}
+.ks_wt_2 .ks_wt li{background:-webkit-linear-gradient(top, #e7e7e7 0%,#dfdfdf 100%);text-indent: 20px;height:20px;width:20px;overflow:hidden; border-radius:100%;margin:5px 10px;}
+
+.ks_wt_1 .ks_wt .ks_t2{background:-webkit-linear-gradient(top, #e7e7e7 0%,#dfdfdf 100%); color:#000;}
+.ks_wt_2 .ks_wt .ks_t2{background: -webkit-linear-gradient(top, #AAAAAA 0%,#979797 100%); -webkit-animation:kt2 500ms linear;}
+
+
+@-webkit-keyframes kt2
+{
+	0%{-webkit-transform:scale(1);}
+	100%{-webkit-transform:scale(1.5);}
+}

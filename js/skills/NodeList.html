@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .lis p{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<ul id="nodelist">
+    <li class="lis">index0</li>
+    <li class="lis">index1</li>
+    <li class="lis">index2</li>
+    <li class="lis">index3</li>
+    <li class="lis">index4</li>
+</ul>
+<script>
+    var myUl = document.getElementById('nodelist');
+    var appendNode = document.getElementsByTagName("li").item(0);
+    //此处appendChild会将appendNode剪切到ul的尾部 正确做法是cloneNode(true)
+    //myUl.appendChild(appendNode);
+    myUl.appendChild(appendNode.cloneNode(true));
+
+    var nodeLists = document.getElementsByTagName("li");
+
+    /* IE8以下兼容有问题 */
+    function nodeList2arr(nodeList){
+        return [].slice.call(nodeList);
+    }
+    /* 还是用基础的好 */
+    function nodeList2arr(nodeList){
+        var nodeListArr = [];
+        for(var i= 0; i< nodeLists.length; i++){
+            nodeListArr.push(nodeLists[i]);
+        }
+        return nodeListArr;
+    }
+
+
+    /*function arg2arr() {
+        console.log(arguments);
+        var arr = Array.prototype.slice.call(arguments);
+        console.log(arr);
+    }
+    arg2arr(1, 2, 3);*/
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+define([],function(){return"Fucking Chinese New Year"});

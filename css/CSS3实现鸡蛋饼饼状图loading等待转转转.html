@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素CSS值之getComputedStyle方法熟悉</title>
+    <link rel="stylesheet" href="../common/css/base.css"/>
+
+    <!--
+        相关资料 http://www.zhangxinxu.com/wordpress/2014/04/css3-pie-loading-waiting-animation/
+    -->
+    <style>
+        .span_container{
+            position: relative;
+            width: 64px; height: 64px; margin: 0 auto;
+        }
+        .spin_outer{
+            width: 64px; height: 64px;
+            background: url("../common/img/icon-spin-s.png") center center no-repeat;
+            -webkit-animation: spining .8s linear infinite;
+        }
+        .spin_box{
+            position: absolute; left: 50%; top: 50%;
+            transform: translate(-50%,-50%);
+            width: 38px; height: 38px;
+            background-color: #89abdd;
+            border-radius: 50%;
+            -webkit-animation: spining-half-hide 1.6s steps(1, end) infinite;
+        }
+        .spin_box .mask-l,
+        .spin_box .mask-r,
+        .spin_box .spin{
+            position: absolute; top: 0;
+            width: 50%; height: 100%;
+            background-color: #89abdd;
+            border-radius: 38px 0 0 38px;
+        }
+        .spin_box .mask-l {
+            -webkit-animation: spining-half-show .8s steps(1, end) infinite;
+        }
+        .spin_box .mask-r {
+            right: 0;
+            background-color: #4b86db;
+            border-radius: 0 38px 38px 0;
+            -webkit-animation: spining-half-hide .8s steps(1, end) infinite;
+        }
+        .spin_box .spin{
+            background-color: #4b86db;
+            transform-origin: right center;
+            -webkit-animation: spining .8s linear infinite;
+        }
+        .spin_box_2,
+        .spin_box_2 .mask-l{
+            background-color: #4b86db;
+        }
+        .spin_box_2{
+            -webkit-animation: spining-half-show 1.6s steps(1, end) infinite;
+        }
+        .spin_box_2 .mask-r,
+        .spin_box_2 .spin{
+            background-color: #89abdd;
+        }
+        @-webkit-keyframes spining {
+            0% {transform: rotate(0deg)}
+            100% {transform: rotate(-360deg)}
+        }
+        @-webkit-keyframes spining-half-show {
+            0% {opacity: 0;}
+            50%,100% {opacity: 1;}
+        }
+        @-webkit-keyframes spining-half-hide {
+            0% {opacity: 1;}
+            50%,100% {opacity: 0;}
+        }
+        @-webkit-keyframes spining-item {
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="span_container">
+        <div class="spin_outer"></div>
+        <div class="spin_box spin_box_1">
+            <div class="spin"></div>
+            <div class="mask-l"></div>
+            <div class="mask-r"></div>
+        </div>
+        <div class="spin_box spin_box_2">
+            <div class="spin"></div>
+            <div class="mask-l"></div>
+            <div class="mask-r"></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

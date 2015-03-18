@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        .wrapper{
+            width: 200px; height: 200px;
+            border: 2px solid red;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper" id="wrapper"></div>
+    <script>
+        var ele = document.getElementById("wrapper");
+        //  currentStyle ie8及以下 window.getComputedStyle(ele,null) 支持其他所有
+        var ele_style = ele.currentStyle ? ele.currentStyle : window.getComputedStyle(ele,null);
+        // getPropertyValue支持ie9+和其他横杠 ie8及以下用驼峰法
+        if(ele_style.getPropertyValue){
+            alert(ele_style.getPropertyValue("background-color"));
+        }else{
+            alert(ele_style.getAttribute("backgroundColor"));
+        }
+    </script>
+</body>
+</html>

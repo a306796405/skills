@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../common/css/base.css"/>
+    <style>
+        .box{
+            width: 100px; height: 100px; margin: 100px auto;
+            background-color: blue;
+            /*
+                css默认状态以target为标准
+                steps(1,end) === step-end
+                steps(1,start) === steps(1) === step-start
+                对应多帧 即0%～x％～x％～100%
+
+                steps(a,start), steps(a,end)
+                对应2帧 即0%～100%
+                如果用于大于n>2帧 会出现总共a＊n帧 不可控
+            */
+            -webkit-animation: changing 5s linear backwards;
+            /*-webkit-animation: changing 5s step-start backwards;*/
+        }
+        @-webkit-keyframes changing {
+            0% {background-color: gray;}
+            50% {background-color: yellow;}
+            100% {background-color: blue;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

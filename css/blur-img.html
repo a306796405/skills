@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../common/css/base.css"/>
+    <style>
+        body{
+            background-color: #9C5C1E;
+            font-family: 'microsoft yahei';
+        }
+        .background_wrap{
+            height: 100%; overflow: hidden;
+        }
+        .background{
+            width: 100%; top: 100%;
+        }
+        .box_wrapper{
+            position: absolute; top: 50%; left: 50%; overflow: hidden;
+            width: 860px; height: 310px; margin: -155px 0 0 -430px;
+            /* IE9+ */
+            background-color: rgba(255,255,255,.1);
+            /* IE6-IE8 */
+            filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#17FFFFFF,endColorStr=#17FFFFFF);
+        }
+        .box_wrapper img{
+            -webkit-transition: all .25s;
+            transition: all .25s;
+            vertical-align: bottom;
+        }
+        .box_wrapper li{
+            position: relative;
+            float: left; width: 160px; height: 140px; margin: 10px 0 0 10px; overflow: hidden;
+            cursor: pointer;
+        }
+        .box_wrapper .layer{
+            position: absolute; left: 0; top: 0;
+            width: 100%; height: 100%;
+        }
+        .list:hover .layer,
+        .list:hover .blur {
+            -webkit-transform: scale(1.05) translateZ(0);
+            -ms-transform: scale(1.05);
+            transform: scale(1.05) translateZ(0);
+            /* IE6-IE8 */
+            zoom: 1.05;
+        }
+        :root .list:hover .layer,
+        :root .list:hover .blur {
+            zoom: 1;
+        }
+        .cover{
+            position: absolute; left: 0; bottom: 0;
+            height: 30px; width: 100%; overflow: hidden;
+            line-height: 30px;
+        }
+        .cover .blur{
+            position: absolute; left: 0; bottom: 0;
+            width: 100%;
+            /*translateZ开启gpu加速*/
+            transform: translateZ(0);
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            filter: blur(5px);
+            filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5, MakeShadow=false);
+        }
+        .cover .mask{
+            position: absolute; left: 0; top: 0; width: 100%;
+            color: #fff;
+            /* IE9+ */
+            background-color: rgba(0,0,0,.2);
+            /* IE6-IE8 */
+            filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#34000000,endColorStr=#34000000);
+            text-indent: 10px; color: #fff; font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<svg class="hidden" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter id="blur">
+            <feGaussianBlur stdDeviation="5"></feGaussianBlur>
+        </filter>
+    </defs>
+</svg>
+<div class="background_wrap">
+    <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/xique1.jpg" class="background">
+</div>
+<ul class="box_wrapper">
+    <li class="list">
+        <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/sheying204b.jpg" class="layer">
+        <div class="cover">
+            <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/sheying204b.jpg" class="blur">
+            <div class="mask">摄影</div>
+        </div>
+    </li>
+    <li class="list">
+        <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/lvyou204.jpg" class="layer">
+        <div class="cover">
+            <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/lvyou204.jpg" class="blur">
+            <div class="mask">旅游</div>
+        </div>
+    </li>
+    <li class="list">
+        <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/mingixng204.jpg" class="layer">
+        <div class="cover">
+            <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/mingixng204.jpg" class="blur">
+            <div class="mask">明星</div>
+        </div>
+    </li>
+    <li class="list">
+        <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/sheji204.jpg" class="layer">
+        <div class="cover">
+            <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/sheji204.jpg" class="blur">
+            <div class="mask">设计</div>
+        </div>
+    </li>
+    <li class="list">
+        <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/chongwu204.jpg" class="layer">
+        <div class="cover">
+            <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/chongwu204.jpg" class="blur">
+            <div class="mask">宠物</div>
+        </div>
+    </li>
+    <li class="list">
+        <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/shishang204.jpg" class="layer">
+        <div class="cover">
+            <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/shishang204.jpg" class="blur">
+            <div class="mask">时尚</div>
+        </div>
+    </li>
+    <li class="list">
+        <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/bizhi204.jpg" class="layer">
+        <div class="cover">
+            <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/bizhi204.jpg" class="blur">
+            <div class="mask">壁纸</div>
+        </div>
+    </li>
+    <li class="list">
+        <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/dongman204.jpg" class="layer">
+        <div class="cover">
+            <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/dongman204.jpg" class="blur">
+            <div class="mask">动漫</div>
+        </div>
+    </li>
+    <li class="list">
+        <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/jiaju204.jpg" class="layer">
+        <div class="cover">
+            <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/jiaju204.jpg" class="blur">
+            <div class="mask">家居</div>
+        </div>
+    </li>
+    <li class="list">
+        <img src="http://img0.bdstatic.com/img/image/shouye/xinshouye/qiche204.jpg" class="layer">
+        <div class="cover">
+            <img id="img" src="http://img0.bdstatic.com/img/image/shouye/xinshouye/qiche204.jpg" class="blur">
+            <div class="mask">汽车</div>
+        </div>
+    </li>
+</ul>
+<script>
+    //IE10+ blur
+    if (typeof document.msHidden != "undefined") {
+        [].slice.call(document.querySelectorAll(".cover img")).forEach(function(img) {
+            img.classList.add("hidden");
+            var myImage = new Image(), src = img.src;
+            img.insertAdjacentHTML("afterend", '<svg class="blur" width="160" height="140">\
+			<image xlink:href="'+ src +'" src="'+ src +'" width="160" height="140" y="0" x="0" filter="url(#blur)" />\
+		</svg>');
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+define([],function(){return{sortWay:function(e,t){return e-t},exportUrl:function(){return require.toUrl("../css/base.css")}}});

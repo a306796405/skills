@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../lib/jquery.js"></script>
+    <script src="../../lib/underscore.js"></script>
+    <script src="../../lib/backbone.js"></script>
+</head>
+<body>
+<a href="#/manual">manual</a>
+
+<script>
+    $(function(){
+        var AppRouter = Backbone.Router.extend({
+            routes: {
+                "posts/:id" : "getPost",
+                //下面对应的链接为<a href="#/download/user/images/hey.gif">download gif</a>
+                "manual": "manual"
+            },
+            getPost: function(id) {
+                console.log(id);
+            },
+            manual : function(){
+                // trigger: true url变化并且触发getPost事件
+                // replace: true url替换，而不是前进到这个url，意味着启用该参数，浏览器的history不会记录这个变动
+                app_router.navigate('/posts/' + 404, {trigger: true, replace: true})
+            }
+        });
+        var app_router = new AppRouter;
+        Backbone.history.start();
+    })
+</script>
+</body>
+</html>

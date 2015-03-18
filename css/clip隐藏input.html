@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .hidden_box{
+            position: absolute;
+            width: 100px; height: 100px;
+            background-color: red;
+            clip: rect(0 5px 5px 0); /* 全兼容 */
+            /*clip: rect(0,0,0,0);*/
+        }
+    </style>
+</head>
+<body>
+    <div class="hidden_box"></div>
+</body>
+</html>

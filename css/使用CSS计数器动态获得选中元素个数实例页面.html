@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>使用CSS计数器动态获得选中元素个数实例页面</title>
+    <link rel="stylesheet" href="../common/css/base.css"/>
+    <style>
+        .icecream_box{
+            counter-reset: icecream;
+        }
+        .icecream_box input:checked{
+            counter-increment: icecream;
+        }
+        .icecream_num:after{
+            content: counter(icecream);
+        }
+
+        .btn,.sum_result{
+            display: inline-block; min-width: 80px;
+            line-height: 40px; margin-bottom: 10px;
+            text-align: center; font: bold 20px/40px 'microsoft yahei';
+            background-color: #beceeb;
+            cursor: pointer;
+        }
+        .sum_box{
+            counter-reset: sum;
+        }
+        .sum_box input{
+            position: absolute;
+            clip: rect(0,0,0,0);
+
+        }
+        .sum_result{
+            display: block;
+        }
+        .sum_result:before{
+            content: "=" counter(sum);
+        }
+        #number1:checked ~
+        #number2:checked ~
+        #number3:not(:checked) ~
+        #number4:not(:checked) ~
+        #number5:not(:checked) ~
+        #number6:checked ~
+        .sum_result::after{
+            content: "万岁";
+        }
+        #number1:checked { counter-increment: sum 64; }
+        #number2:checked { counter-increment: sum 16; }
+        #number3:checked { counter-increment: sum -32; }
+        #number4:checked { counter-increment: sum 128; }
+        #number5:checked { counter-increment: sum 4; }
+        #number6:checked { counter-increment: sum -8; }
+
+        input:checked + label{
+            background-color: red;
+            clip: rect(0,0,0,0);
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ol class="icecream_box">
+        <li><input type="checkbox" name="icecream" id="icecream1"/><label for="icecream1">哈根达斯</label></li>
+        <li><input type="checkbox" name="icecream" id="icecream2"/><label for="icecream2">和路雪</label></li>
+        <li><input type="checkbox" name="icecream" id="icecream3"/><label for="icecream3">八喜</label></li>
+        <li><input type="checkbox" name="icecream" id="icecream4"/><label for="icecream4">蒙牛</label></li>
+        <li><input type="checkbox" name="icecream" id="icecream5"/><label for="icecream5">雀巢</label></li>
+        <li><input type="checkbox" name="icecream" id="icecream6"/><label for="icecream6">伊利</label></li>
+    </ol>
+    <p>您共选择了<span class="icecream_num"></span>冰淇淋</p>
+</div>
+
+<div class="wrap">
+    <div class="sum_box">
+        <input type="checkbox" id="number1"><label class="btn" for="number1">64</label>
+        <input type="checkbox" id="number2"><label class="btn" for="number2">+16</label>
+        <input type="checkbox" id="number3"><label class="btn" for="number3">-32</label>
+        <input type="checkbox" id="number4"><label class="btn" for="number4">+128</label>
+        <input type="checkbox" id="number5"><label class="btn" for="number5">+4</label>
+        <input type="checkbox" id="number6"><label class="btn" for="number6">-8</label>
+        <p class="sum_result"></p>
+    </div>
+</div>
+
+</body>
+</html>

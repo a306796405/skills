@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chrome absolute绝对定位displayvisibility渲染bug</title>
+    <link rel="stylesheet" href="../common/css/base.css"/>
+    <style>
+        .abs{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <a href="javascript:" id="btnDisplay" class="btn btn-blue">改变图片display水平</a>
+    <a href="javascript:" id="btnTranslateZ" class="btn btn-blue">同时toggle translateZ</a>
+</p>
+<strong>点击上面按钮，改变图片display水平：</strong>
+<img id="image" class="abs" src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg">
+<script>
+    var btnDisplay = document.getElementById("btnDisplay"),
+            btnTranslateZ = document.getElementById("btnTranslateZ"),
+            img = document.getElementById("image"),
+            fixFlag = false;
+
+    btnDisplay.onclick = function(){
+        var css_style = img.style.display;
+        if(css_style != "block"){
+            img.style.display = "block";
+        }else{
+            img.style.display = "inline-block";
+        }
+        btnDisplay.innerHTML = "此时display为：" + img.style.display;
+    }
+    btnTranslateZ.onclick = function(){
+        var css_style = img.style.display,
+                imgParentNode = img.parentNode;
+        if(css_style != "block"){
+            img.style.display = "block";
+        }else{
+            img.style.display = "inline-block";
+        }
+        imgParentNode.style.webkitTransform = fixFlag? '' : 'translateZ(0)';
+        fixFlag = !fixFlag;
+        btnDisplay.innerHTML = "修正后此时display为：" + img.style.display;
+    }
+</script>
+</body>
+</html>

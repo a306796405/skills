@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="../../lib/jquery.js"></script>
+<script src="../../lib/underscore.js"></script>
+<script src="../../lib/backbone.js"></script>
+<script>
+    $(function(){
+        var Book = Backbone.Model.extend({
+            defaults: {
+                name: 'default'
+            }
+        })
+        var BookShelf = Backbone.Collection.extend({
+            model: Book
+        })
+        var bookShelf = new BookShelf();
+
+        bookShelf.url = 'books.json'; //注意这里
+        var showAllBooks = function(){
+            bookShelf.each(function(book){
+                //将book数据渲染到页面的操作。
+                document.writeln(book.get('name'));
+            });
+        }
+
+        bookShelf.bind('reset',showAllBooks);
+        bookShelf.url = 'books.json'; //注意这里
+        bookShelf.fetch({
+            reset: true,   // 需要主动传递reset，才会触发reset
+            success:function(collection, response, options){
+//                collection.each(function(book){
+//                    console.log(book.get('name'));
+//                });
+            },error:function(collection, response, options){
+                alert('error');
+            }
+        });
+
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .character{
+            width: 180px;
+            height: 300px;
+            background: url(img/charector.png) 0 0 no-repeat;
+            -webkit-animation: going 1s step-start infinite;
+        }
+
+        @-webkit-keyframes going{
+            0% {background-position: 0 0;}
+            14.3% {background-position: -180px 0;}
+            28.6% {background-position: -360px 0;}
+            42.9% {background-position: -540px 0;}
+            57.2% {background-position: -720px 0;}
+            71.5% {background-position: -900px 0;}
+            85.8% {background-position: -1080px 0;}
+            100% {background-position: 0 0;}
+        }
+        .pause{
+            -webkit-animation-play-state: paused;
+        }
+
+        .box{
+            width: 200px; height: 200px;
+            background-color: lightcoral;
+            -webkit-transition: 1s ease;
+            -moz-transition: 1s ease;
+            -ms-transition: 1s ease;
+            -o-transition: 1s ease;
+            transition: 1s ease;
+        }
+        .box:hover{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="character"></div>
+
+    <div class="box"></div>
+    <script>
+        var x = document.querySelector(".character");
+
+        // Chrome, Safari 和 Opera 代码
+        x.addEventListener("webkitAnimationStart", myStartFunction);
+
+        // 标准语法
+        x.addEventListener("animationstart", myStartFunction);
+
+        // Chrome, Safari 和 Opera 代码
+        x.addEventListener("webkitAnimationEnd", myEndFunction);
+
+        // 标准语法
+        x.addEventListener("animationend", myEndFunction);
+
+        var y = document.querySelector(".box");
+
+        // Safari 3.1 到 6.0 代码
+        y.addEventListener("webkitTransitionEnd", myTransitionFunction);
+
+        // 标准语法
+        y.addEventListener("transitionend", myTransitionFunction);
+
+        function myStartFunction(){
+            console.log("i am starting");
+        }
+        function myEndFunction(){
+            console.log("i am ending");
+        }
+        function myTransitionFunction(){
+            console.log("i am changing");
+        }
+    </script>
+</body>
+</html>

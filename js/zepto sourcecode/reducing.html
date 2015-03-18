@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        Array.prototype.reducing = function(func){
+            var arr = this,
+                    len = arr.length,
+                    k = 0,
+                    accumulator = arr[k++];
+            while(k<len){
+                accumulator = func.call(this,accumulator,arr[k]);
+                k++;
+            }
+            return accumulator;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
